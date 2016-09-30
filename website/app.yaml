@@ -1,0 +1,16 @@
+application: myprofile-abhinav
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff|txt))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff|txt))
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.py
